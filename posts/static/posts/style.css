@@ -31,6 +31,9 @@
     margin-top: 60px;
     text-align: center;
 }
+.step-links{
+    color: green;
+}
 body {
 	background: white url("images/backtoblack.png") no-repeat;
 	font-family: "Courier New", Courier, monospace;

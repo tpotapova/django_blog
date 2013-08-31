@@ -11,7 +11,7 @@ urlpatterns = patterns('',
     #url(r'^logout/$', logout,name='logout'))
     (r'^login/$',  login),
     (r'^logout/$', logout)
-    (r"^add_comment/(\d+)/$", "add_comment"),
+    #(r"^add_comment/(\d+)/$", "add_comment"),
 ) 
 
 urlpatterns += patterns('',
