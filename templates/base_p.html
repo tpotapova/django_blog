@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'posts/style.css' %}" >
+</head>
+<body>
+<div class = 'header'>
+<h2> Блог Игоря Долгого </h2>
+{% if loggedIn %}
+    <a href="/admin/logout">Выйти</a>
+    <a href="/admin/posts/post/add">Создать запись</a>
+{% else %}
+    <a href="/admin">Войти</a>
+{% endif %}
+</div>
+<div class = 'content'>
+<div class= 'post'>
+{% block content %}
+{% endblock %}
+</div>
+<div class="pagination">
+<span class="step-links">
+{% if posts.has_previous %}
+<a href="?page={{ posts.previous_page_number }}">previous</a>
+{% endif %}
+<span class="current">
+Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+</span>
+{% if posts.has_next %}
+<a href="?page={{ posts.next_page_number }}">next</a>
+{% endif %}
+</span>
+</div>
+<div class = 'footer'>
+<p>Игорь Долгий, 2013</p>
+</div>
+</div>
+</body>
+</html>

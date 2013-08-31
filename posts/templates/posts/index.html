@@ -1,0 +1,24 @@
+{% extends "base_p.html" %}
+{% block content %}
+	{% if postList %}
+        {% for post in posts %}
+            <div>
+            <p><a href="/posts/{{ post.id }}/">{{ post.get_title }}</a></p>
+   		    <p>{{ post.get_pub_date }}</p>
+            {% if post.image %}
+			    <img src="/media/{{ post.image }}">
+            {% endif %}
+    		<p>{{ post.get_description }}</p>
+            {% if loggedIn %}
+			    <p><a href="/admin/posts/post/{{ post.id }}">Редактировать</a></p>
+            {% endif%}
+            {% if post.show_full_text %}
+                <p><a href="/posts/{{ post.id }}/">Полностью</a></p>
+            {% endif%}
+            <p></p>
+	        </div>
+        {% endfor %}
+    {% else %}
+        <p>No posts are available.</p>
+    {% endif %}
+{% endblock %}

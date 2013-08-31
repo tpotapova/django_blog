@@ -1,0 +1,9 @@
+<p><a href="/admin">Log in</a></p>
+{% if loggedIn %}
+    <p>
+    <a href="/admin/account/logout">Выйти</a>
+    <a href="/admin/posts/">Создать запись</a>
+    </p>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
